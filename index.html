@@ -23,7 +23,13 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
       rel="stylesheet"
     />
-    <link href="assets/css/main.css?v=heritage36" rel="stylesheet" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/hero-gk1-reception-welcome-cropped-v3.webp"
+      fetchpriority="high"
+    />
+    <link href="assets/css/main.css?v=heritage43" rel="stylesheet" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -54,6 +60,9 @@
           <img
             src="assets/img/dr-bhasins-lab-logo.png"
             alt="Dr Bhasin's Lab — Trusted Quality and Service"
+            width="1927"
+            height="652"
+            decoding="async"
           />
         </a>
         <nav class="navmenu" aria-label="Primary navigation">
@@ -192,12 +201,18 @@
                 <img
                   src="assets/img/badge-26-years-pathology-blue-cutout-v2.webp"
                   alt="26 Years, established in 2000"
+                  width="1254"
+                  height="1254"
+                  decoding="async"
                 />
               </div>
               <div class="hero-stat hero-stat-badge">
                 <img
                   src="assets/img/badge-24x7-blue-cyan-cutout-v1.webp"
                   alt="24 by 7 by 365, always open"
+                  width="1254"
+                  height="1254"
+                  decoding="async"
                 />
               </div>
               <div class="hero-stat hero-stat-accreditation">
@@ -205,6 +220,9 @@
                   class="hero-stat-accreditation-mark"
                   src="assets/img/nabl-accreditation-mark-blue-v2.webp"
                   alt="ILAC MRA and NABL accreditation mark, certificate NABLM0626DL08110"
+                  width="547"
+                  height="302"
+                  decoding="async"
                 />
                 <strong>NABL accredited</strong>
               </div>
@@ -913,7 +931,11 @@
             <p class="muted">
               For the fastest response, call or WhatsApp the 24x7 helpline.
             </p>
-            <form data-draft-form>
+            <form
+              data-draft-form
+              data-leads-endpoint="https://labmate.bhasinpathlabs.com:4672/api/v1/leads"
+              data-api-key="469eb005e7b9095e336ff74ca1171b5158ed6c2e07c10fa393de1070572fc0c0"
+            >
               <div class="form-grid">
                 <div class="field">
                   <label>Name</label>
@@ -921,11 +943,20 @@
                 </div>
                 <div class="field">
                   <label>Mobile number</label>
-                  <input name="phone" inputmode="tel" required />
+                  <input
+                    name="mobile"
+                    type="tel"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    title="Enter a 10-digit mobile number"
+                    required 
+                  />
                 </div>
                 <div class="field full">
                   <label>Need help with</label>
-                  <select name="service">
+                  <select name="helpWith">
                     <option>Home collection</option>
                     <option>Centre visit</option>
                     <option>Health check-up</option>
@@ -934,14 +965,19 @@
                     <option>Report support</option>
                   </select>
                 </div>
-                <div class="field full">
+                <!-- <div class="field full">
                   <label>Preferred date, time or message</label>
                   <textarea rows="4"></textarea>
-                </div>
+                </div> -->
                 <div class="field full">
-                  <label>
-                    <input type="checkbox" required />
-                    I consent to being contacted about this enquiry.
+                  <label class="consent-label">
+                    <input
+                      name="consent"
+                      type="checkbox"
+                      value="yes"
+                      required
+                    />
+                    <span>I consent to being contacted about this enquiry.</span>
                   </label>
                   <span class="form-note">
                     Your details will only be used to respond to this enquiry.
@@ -1108,6 +1144,6 @@
         Call 24x7
       </a>
     </div>
-    <script src="assets/js/main.js?v=heritage2"></script>
+    <script src="assets/js/main.js?v=heritage6" defer></script>
   </body>
 </html>

@@ -63,9 +63,69 @@
           }
         });
 
-      form.addEventListener("submit", (event) => {
+      form.addEventListener("submit", async (event) => {
         event.preventDefault();
         if (!form.reportValidity()) return;
+
+        const leadsEndpoint = form.dataset.leadsEndpoint;
+        if (leadsEndpoint) {
+          const submitButton = form.querySelector('[type="submit"]');
+          const status = form.querySelector(".form-status");
+          const originalButtonText = submitButton?.textContent || "Submit enquiry";
+
+          if (submitButton?.disabled) return;
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Submitting…";
+          }
+          if (status) {
+            status.className = "form-status";
+            status.textContent = "Submitting your enquiry…";
+          }
+
+          try {
+            const formData = new FormData(form);
+            const payload = new FormData();
+            payload.append("name", String(formData.get("name") || "").trim());
+            payload.append("phone", String(formData.get("mobile") || "").trim());
+            payload.append(
+              "remarks",
+              String(formData.get("helpWith") || "").trim(),
+            );
+
+            const response = await fetch(leadsEndpoint, {
+              method: "POST",
+              headers: {
+                "X-API-Key": form.dataset.apiKey || "",
+              },
+              body: payload,
+            });
+
+            if (!response.ok) {
+              throw new Error(`Lead API returned ${response.status}`);
+            }
+
+            form.reset();
+            if (status) {
+              status.className = "form-status is-success";
+              status.textContent =
+                "Thank you. Your enquiry has been submitted successfully.";
+            }
+          } catch (error) {
+            if (status) {
+              status.className = "form-status is-error";
+              status.textContent =
+                "We could not submit your enquiry. Please call or WhatsApp the lab.";
+            }
+          } finally {
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.textContent = originalButtonText;
+            }
+          }
+          return;
+        }
+
         const fields = [...new FormData(form).entries()]
           .filter(([, value]) => String(value).trim())
           .map(([key, value]) => `${key.replace(/-/g, " ")}: ${value}`);
