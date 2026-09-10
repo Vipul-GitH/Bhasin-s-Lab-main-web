@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Reusable Callback Form</title>
+    <style>
+      /* Copy this style block to the other project's stylesheet. */
+      :root {
+        --callback-primary: #054e5d;
+        --callback-accent: #57bf97;
+        --callback-ink: #17343b;
+        --callback-muted: #65777b;
+        --callback-line: #dce7e5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 24px;
+        background: #f6f8f8;
+        color: var(--callback-ink);
+        font-family: Arial, sans-serif;
+      }
+
+      .callback-card {
+        width: min(620px, 100%);
+        margin: 0 auto;
+        padding: 28px;
+        border: 1px solid var(--callback-line);
+        border-radius: 22px;
+        background: #fff;
+        box-shadow: 0 20px 60px rgba(5, 78, 93, 0.12);
+      }
+
+      .callback-card h2 {
+        margin: 0 0 8px;
+        color: var(--callback-primary);
+        font-size: 2rem;
+      }
+
+      .callback-intro {
+        margin: 0 0 22px;
+        color: var(--callback-muted);
+      }
+
+      .callback-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .callback-field {
+        display: grid;
+        gap: 7px;
+      }
+
+      .callback-field--full {
+        grid-column: 1 / -1;
+      }
+
+      .callback-field > label {
+        color: #29484f;
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .callback-field input,
+      .callback-field select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #cbdad7;
+        border-radius: 9px;
+        background: #fff;
+        color: var(--callback-ink);
+        font: inherit;
+      }
+
+      .callback-field input:focus,
+      .callback-field select:focus {
+        border-color: var(--callback-accent);
+        outline: 3px solid rgba(87, 191, 151, 0.18);
+      }
+
+      .callback-consent {
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 10px;
+        width: fit-content;
+        cursor: pointer;
+        line-height: 1.4;
+      }
+
+      .callback-consent input {
+        flex: 0 0 16px;
+        width: 16px;
+        height: 16px;
+        margin: 3px 0 0;
+        accent-color: var(--callback-accent);
+      }
+
+      .callback-note,
+      .callback-status {
+        color: var(--callback-muted);
+        font-size: 0.78rem;
+      }
+
+      .callback-submit {
+        margin-top: 18px;
+        padding: 12px 20px;
+        border: 0;
+        border-radius: 999px;
+        background: var(--callback-primary);
+        color: #fff;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 700;
+      }
+
+      .callback-submit:hover {
+        background: #0b6777;
+      }
+
+      .callback-submit:disabled {
+        cursor: wait;
+        opacity: 0.7;
+      }
+
+      .callback-status {
+        min-height: 1.2em;
+        margin-top: 10px;
+        font-weight: 600;
+      }
+
+      .callback-status.is-success {
+        color: #176b4d;
+      }
+
+      .callback-status.is-error {
+        color: #a52a2a;
+      }
+
+      body.embed-mode {
+        padding: 0;
+        background: transparent;
+      }
+
+      body.embed-mode .callback-card {
+        width: 100%;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      body.modal-mode {
+        padding: 0;
+        background: transparent;
+        overflow: hidden;
+      }
+
+      body.modal-mode .callback-card {
+        width: 100%;
+        padding: 20px 22px 14px;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      body.modal-mode .callback-intro {
+        margin-bottom: 16px;
+      }
+
+      body.modal-mode .callback-grid {
+        gap: 12px;
+      }
+
+      body.modal-mode .callback-submit {
+        margin-top: 14px;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 14px;
+        }
+
+        body.embed-mode,
+        body.modal-mode {
+          padding: 0;
+        }
+
+        body.modal-mode .callback-card {
+          padding: 20px 22px 14px;
+        }
+
+        .callback-card {
+          padding: 22px;
+        }
+
+        .callback-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .callback-field--full {
+          grid-column: auto;
+        }
+
+        .callback-submit {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Copy this card to the other project's page. -->
+    <section class="callback-card" aria-labelledby="callback-title">
+      <h2 id="callback-title">Request a callback</h2>
+      <p class="callback-intro">
+        For the fastest response, call or WhatsApp the 24x7 helpline.
+      </p>
+
+      <form id="callback-form">
+        <div class="callback-grid">
+          <div class="callback-field">
+            <label for="callback-name">Name</label>
+            <input
+              id="callback-name"
+              name="name"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="callback-field">
+            <label for="callback-mobile">Mobile number</label>
+            <input
+              id="callback-mobile"
+              name="mobile"
+              type="tel"
+              inputmode="numeric"
+              autocomplete="tel"
+              pattern="[0-9]{10}"
+              maxlength="10"
+              title="Enter a 10-digit mobile number"
+              required
+            />
+          </div>
+
+          <div class="callback-field callback-field--full">
+            <label for="callback-help-with">Need help with</label>
+            <select id="callback-help-with" name="helpWith">
+              <option>Home collection</option>
+              <option>Doctor or institution</option>
+              <option>Centre visit</option>
+              <option>Health check-up</option>
+              <option>Test information</option>
+              <option>CGHS service</option>
+              <option>Report support</option>
+            </select>
+          </div>
+
+          <div class="callback-field callback-field--full">
+            <label class="callback-consent">
+              <input name="consent" type="checkbox" value="yes" required />
+              <span>I consent to being contacted about this enquiry.</span>
+            </label>
+            <span class="callback-note">
+              Your details will only be used to respond to this enquiry.
+            </span>
+          </div>
+        </div>
+
+        <button class="callback-submit" type="submit">Submit enquiry</button>
+        <div class="callback-status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <script>
+      (() => {
+        // Change these two values if the API endpoint or key changes.
+        const LEADS_ENDPOINT =
+          "https://labmate.bhasinpathlabs.com:4672/api/v1/leads";
+        const API_KEY =
+          "469eb005e7b9095e336ff74ca1171b5158ed6c2e07c10fa393de1070572fc0c0";
+
+        const query = new URLSearchParams(window.location.search);
+        const embedMode = query.get("embed");
+        document.body.classList.toggle("embed-mode", embedMode === "inline");
+        document.body.classList.toggle("modal-mode", embedMode === "modal");
+        const requestedService = query.get("service");
+        const source = query.get("source") === "flu-test" ? "flu-test" : "";
+        const helpWith = document.querySelector("#callback-help-with");
+        if (requestedService && [...helpWith.options].some((option) => option.value === requestedService)) {
+          helpWith.value = requestedService;
+        }
+
+        const form = document.querySelector("#callback-form");
+        const submitButton = form.querySelector('[type="submit"]');
+        const status = form.querySelector(".callback-status");
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          if (!form.reportValidity() || submitButton.disabled) return;
+
+          const originalButtonText = submitButton.textContent;
+          submitButton.disabled = true;
+          submitButton.textContent = "Submitting...";
+          status.className = "callback-status";
+          status.textContent = "Submitting your enquiry...";
+
+          try {
+            const formData = new FormData(form);
+            const payload = new FormData();
+
+            // These are the exact field names expected by the Leads API.
+            payload.append(
+              "name",
+              String(formData.get("name") || "").trim(),
+            );
+            payload.append(
+              "phone",
+              String(formData.get("mobile") || "").trim(),
+            );
+            payload.append(
+              "remarks",
+              [String(formData.get("helpWith") || "").trim(), source]
+                .filter(Boolean)
+                .join("/"),
+            );
+
+            const response = await fetch(LEADS_ENDPOINT, {
+              method: "POST",
+              headers: {
+                "X-API-Key": API_KEY,
+              },
+              body: payload,
+            });
+
+            if (!response.ok) {
+              throw new Error(`Leads API returned HTTP ${response.status}`);
+            }
+
+            form.reset();
+            status.className = "callback-status is-success";
+            status.textContent =
+              "Thank you. Your enquiry has been submitted successfully.";
+          } catch (error) {
+            console.error("Callback form submission failed:", error);
+            status.className = "callback-status is-error";
+            status.textContent =
+              "We could not submit your enquiry. Please call or WhatsApp the lab.";
+          } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

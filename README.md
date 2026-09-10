@@ -32,7 +32,7 @@ Run `python server.py` in this folder and open `http://localhost:2010`. The page
 ## Important implementation notes
 
 - Forms are intentionally non-functional. Connect them to the CRM, add reCAPTCHA and approve consent/privacy wording before launch.
-- The website is marked `noindex,nofollow` while it remains a draft.
+- Public pages are marked `index,follow`; the 404 and starter pages remain excluded from search results.
 - Replace every photography placeholder with authentic photography according to the embedded brief.
 - Do not publish patient labels, reports, prescriptions or screens unless staged/masked and properly consented.
 - Keep NABL wording tied to the accredited GK-I site and current scope.

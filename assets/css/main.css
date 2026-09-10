@@ -82,6 +82,24 @@ img {
 .top-strip a {
   color: #fff;
 }
+.top-strip .topbar-report-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  font-weight: 600;
+  line-height: 1.25;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+.top-strip .topbar-report-link:hover,
+.top-strip .topbar-report-link:focus-visible {
+  background: #fff;
+  color: var(--primary);
+}
 .header {
   position: sticky;
   top: 0;
@@ -1368,6 +1386,41 @@ img {
   cursor: wait;
   opacity: 0.7;
 }
+.online-payment-section {
+  padding: 0 0 24px;
+}
+.online-payment-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+}
+.online-payment-card h2 {
+  margin: 3px 0 2px;
+  color: var(--primary);
+  font-size: 1.45rem;
+}
+.online-payment-card p {
+  margin: 0;
+  color: var(--muted);
+}
+.online-payment-card .btn-primary {
+  flex: 0 0 auto;
+}
+@media (max-width: 700px) {
+  .online-payment-card {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 22px;
+  }
+  .online-payment-card .btn-primary {
+    width: 100%;
+  }
+}
 .legal-content {
   max-width: 920px;
   margin-inline: auto;
@@ -2184,11 +2237,21 @@ body.menu-open {
   .top-strip .container {
     min-height: 42px;
   }
+  .top-strip .group:first-child {
+    display: none;
+  }
   .top-strip .group {
     gap: 10px;
   }
-  .top-strip .group:last-child a:first-child {
-    display: none;
+  .top-strip .group:last-child {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+  .top-strip .topbar-report-link {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+    white-space: nowrap;
   }
   .header-inner {
     min-height: 76px;
@@ -2424,5 +2487,47 @@ body.menu-open {
     margin-inline: -15px;
     background-position: left center;
     background-size: cover;
+  }
+}
+
+/* Stable, click-friendly Test Library dropdown. */
+@media (min-width: 1081px) {
+  .navmenu .dropdown > ul {
+    top: 100%;
+    right: 0;
+    left: auto;
+    width: max-content;
+    min-width: 430px;
+    max-width: min(520px, calc(100vw - 32px));
+  }
+
+  .navmenu .dropdown ul a {
+    white-space: normal;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 1080px) {
+  .navmenu.mobile-open .dropdown > ul {
+    width: 100%;
+    min-width: 0;
+  }
+}
+/* Shared callback form used by the homepage and Test Library modals. */
+.form-card-embed {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+.callback-form-embed {
+  display: block;
+  width: 100%;
+  height: 520px;
+  border: 0;
+  background: transparent;
+}
+@media (max-width: 620px) {
+  .callback-form-embed {
+    height: 590px;
   }
 }

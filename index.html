@@ -11,7 +11,8 @@
       content="Independent, medically led pathology laboratory in Greater Kailash I, open 24x7x365 for walk-ins and home sample collection across Delhi NCR."
     />
     <meta name="theme-color" content="#054E5D" />
-    <meta name="robots" content="noindex,nofollow" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://bhasinpathlabs.com/" />
     <link rel="icon" href="assets/img/dr-bhasins-lab-mark.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,7 +30,7 @@
       href="assets/img/hero-gk1-reception-welcome-cropped-v3.webp"
       fetchpriority="high"
     />
-    <link href="assets/css/main.css?v=heritage43" rel="stylesheet" />
+    <link href="assets/css/main.css?v=heritage49" rel="stylesheet" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -46,7 +47,15 @@
           </span>
         </div>
         <div class="group">
-          <a href="mailto:query@bhasinpathlabs.com">query@bhasinpathlabs.com</a>
+          <a
+            class="topbar-report-link"
+            href="https://labmate.bhasinpathlabs.com/downloadnew/PatientLogin.aspx"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="bi bi-file-earmark-arrow-down"></i>
+            Download report or receipt
+          </a>
           <a href="tel:+919311193111">
             <i class="bi bi-telephone"></i>
             +91 93111 93111
@@ -68,6 +77,23 @@
         <nav class="navmenu" aria-label="Primary navigation">
           <ul>
             <li><a class="active" href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" aria-haspopup="true" aria-expanded="false">
+                <span>Test Library</span>
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </a>
+              <ul>
+                <li>
+                  <a
+                    href="test-library/flu-testing/index.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Flu Testing - Swine Flu H1N1, H3N2 &amp; Other Flu Viruses
+                  </a>
+                </li>
+              </ul>
+            </li>
             <!--
               Temporarily hidden navigation links.
               Remove this comment wrapper when the remaining pages are ready.
@@ -249,10 +275,11 @@
       <section class="section patient-service-section">
         <div class="container">
           <div class="section-title">
-            <h2>Because Every Patient Comes First</h2>
+            <h2>Patient First, at Every Step</h2>
             <p>
-              Find the service, solution or assistance that’s right for you or
-              someone you care for.
+              Whether you are arranging a test, caring for someone, seeking
+              support or simply need an answer, we make it easier to find the
+              right next step.
             </p>
           </div>
           <div class="service-grid">
@@ -924,69 +951,36 @@
               </details>
             </div>
           </div>
-          <div class="form-card">
-            <h2 class="content-title" style="font-size: 2rem">
-              Request a callback
-            </h2>
-            <p class="muted">
-              For the fastest response, call or WhatsApp the 24x7 helpline.
-            </p>
-            <form
-              data-draft-form
-              data-leads-endpoint="https://labmate.bhasinpathlabs.com:4672/api/v1/leads"
-              data-api-key="469eb005e7b9095e336ff74ca1171b5158ed6c2e07c10fa393de1070572fc0c0"
+          <div class="form-card form-card-embed">
+            <iframe
+              class="callback-form-embed"
+              title="Request a callback"
+              loading="lazy"
+              src="integrations/callback-form/callback-form.html?service=Home%20collection&amp;embed=inline&amp;v=2"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section
+        class="online-payment-section"
+        aria-labelledby="online-payment-title"
+      >
+        <div class="container">
+          <div class="online-payment-card">
+            <div>
+              <span class="eyebrow">Online payment</span>
+              <h2 id="online-payment-title">Pay online</h2>
+              <p>Use our online payment link to complete your payment.</p>
+            </div>
+            <a
+              class="btn-primary"
+              href="https://pmny.in/nJY4DpuNp1LR"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div class="form-grid">
-                <div class="field">
-                  <label>Name</label>
-                  <input name="name" required />
-                </div>
-                <div class="field">
-                  <label>Mobile number</label>
-                  <input
-                    name="mobile"
-                    type="tel"
-                    inputmode="tel"
-                    autocomplete="tel"
-                    pattern="[0-9]{10}"
-                    maxlength="10"
-                    title="Enter a 10-digit mobile number"
-                    required 
-                  />
-                </div>
-                <div class="field full">
-                  <label>Need help with</label>
-                  <select name="helpWith">
-                    <option>Home collection</option>
-                    <option>Centre visit</option>
-                    <option>Health check-up</option>
-                    <option>Test information</option>
-                    <option>CGHS service</option>
-                    <option>Report support</option>
-                  </select>
-                </div>
-                <!-- <div class="field full">
-                  <label>Preferred date, time or message</label>
-                  <textarea rows="4"></textarea>
-                </div> -->
-                <div class="field full">
-                  <label class="consent-label">
-                    <input
-                      name="consent"
-                      type="checkbox"
-                      value="yes"
-                      required
-                    />
-                    <span>I consent to being contacted about this enquiry.</span>
-                  </label>
-                  <span class="form-note">
-                    Your details will only be used to respond to this enquiry.
-                  </span>
-                </div>
-              </div>
-              <button class="btn-primary" type="submit">Submit enquiry</button>
-              <div class="form-status" aria-live="polite"></div>
-            </form>
+              <i class="bi bi-credit-card"></i>
+              Pay online
+            </a>
           </div>
         </div>
       </section>
@@ -1144,6 +1138,8 @@
         Call 24x7
       </a>
     </div>
-    <script src="assets/js/main.js?v=heritage6" defer></script>
+    <script src="assets/js/main.js?v=heritage8" defer></script>
   </body>
 </html>
+
+
