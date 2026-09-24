@@ -7,9 +7,18 @@
   RewriteCond %{HTTP_HOST} ^www\.bhasinpathlabs\.com$ [NC]
   RewriteRule ^ https://bhasinpathlabs.com%{REQUEST_URI} [R=301,L]
 
-  # Redirect explicit index.html URLs to their clean directory URL.
-  RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html(?:[\s?]) [NC]
-  RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
+  # Redirect explicit index.html requests to their clean directory URL.
+  RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html(?:[?\s]) [NC]
+  RewriteRule ^(.*/)?index\.html$ https://bhasinpathlabs.com/$1 [R=301,L,NE]
+
+  # The former homecollection route has one exact, relevant replacement.
+  RewriteRule ^homecollection/?$ https://bhasinpathlabs.com/home-collection.html [R=301,L,NE]
+
+  # Explicitly retire obsolete URLs reported by Search Console.
+  RewriteRule ^covid19testinformation\.pdf$ - [G,L]
+  RewriteRule ^covid19rtpcr/?$ - [G,L]
+  RewriteRule ^test-information/this-is-my-second-title/?$ - [G,L]
+  RewriteRule ^test/disease/(polycystic-ovary-syndrome-pcos|malnutrition|heart-disease|liver-disease|cardiovascular-disease|hiv-infection-and-aids)/?$ - [G,L]
 </IfModule>
 
 # Browser caching and compression for Apache/LiteSpeed cPanel hosting.
@@ -45,3 +54,6 @@
 </IfModule>
 
 Options -Indexes
+
+ErrorDocument 404 /404.html
+ErrorDocument 410 /404.html
