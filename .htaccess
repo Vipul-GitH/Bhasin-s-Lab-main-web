@@ -1,3 +1,23 @@
+Redirect 301 /cghs.html https://bhasinpathlabs.com/cghs-empanelled/
+# --- Indexing fixes, added 2026-10-01 ---
+RedirectMatch 301 ^/homecollection/?$ https://bhasinpathlabs.com/home-collection.html
+Redirect gone /test-information/this-is-my-second-title
+Redirect gone /customer/register
+Redirect gone /customer/password/reset
+# --- end indexing fixes ---
+Redirect 301 /health-checkups.html https://bhasinpathlabs.com/health-checkups/
+SetEnvIfNoCase User-Agent "OAI-SearchBot" !bad_bot
+SetEnvIfNoCase User-Agent "ChatGPT-User" !bad_bot
+SetEnvIfNoCase User-Agent "GPTBot" !bad_bot
+SetEnvIfNoCase User-Agent "ClaudeBot" !bad_bot
+SetEnvIfNoCase User-Agent "GrokBot" !bad_bot
+SetEnvIfNoCase User-Agent "Perplexity" !bad_bot
+SetEnvIfNoCase User-Agent "Screaming Frog SEO Spider" !bad_bot
+SetEnvIfNoCase User-Agent "AhrefsBot" !bad_bot
+SetEnvIfNoCase User-Agent "SemrushBot" !bad_bot
+SetEnvIfNoCase User-Agent "Ahrefs" !bad_bot
+SetEnvIfNoCase User-Agent "Semrush" !bad_bot
+
 # Canonical host and URL normalization for Apache/LiteSpeed cPanel hosting.
 <IfModule mod_rewrite.c>
   RewriteEngine On

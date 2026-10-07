@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://bhasinpathlabs.com/</loc></url>
-  <url><loc>https://bhasinpathlabs.com/test-library/flu-testing/</loc></url>
+  <url><loc>https://bhasinpathlabs.com/</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://bhasinpathlabs.com/cghs-empanelled/</loc><lastmod>2026-09-30</lastmod></url>
+  <url><loc>https://bhasinpathlabs.com/test-library/</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://bhasinpathlabs.com/test-library/flu-testing/</loc><lastmod>2026-10-01</lastmod></url>
   <url><loc>https://bhasinpathlabs.com/apparticle1/</loc></url>
+  <url><loc>https://bhasinpathlabs.com/health-checkups/</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://bhasinpathlabs.com/home-collection.html</loc><lastmod>2026-10-04</lastmod></url>
 </urlset>
