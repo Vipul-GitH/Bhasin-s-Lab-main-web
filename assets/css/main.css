@@ -2531,3 +2531,10 @@ body.menu-open {
     height: 590px;
   }
 }
+
+/* Keep top-level nav labels (e.g. "Panels & Partnerships") on one line on wide desktops, 8 Oct 2026 */
+@media (min-width: 1280px) {
+  .navmenu > ul > li > a {
+    white-space: nowrap;
+  }
+}
