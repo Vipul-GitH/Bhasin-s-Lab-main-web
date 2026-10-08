@@ -1,0 +1,4 @@
+# Keep CGHS reference PDFs out of search results (added 2026-10-08)
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>
