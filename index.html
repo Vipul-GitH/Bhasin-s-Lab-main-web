@@ -32,15 +32,11 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
       rel="stylesheet"
     />
-    <link
-      rel="preload"
-      as="image"
-      href="assets/img/hero-gk1-reception-welcome-cropped-v3.webp"
-      fetchpriority="high"
-    />
+    <link rel="preload" as="image" href="assets/img/banners/hero-banner-doctors-behind-every-result-1920x720.webp" imagesrcset="assets/img/banners/hero-banner-doctors-behind-every-result-1920x720.webp 1920w, assets/img/banners/hero-banner-doctors-behind-every-result-3840x1440.webp 3840w" imagesizes="(min-width: 1920px) 1920px, 100vw" media="(min-width: 1024px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="assets/img/banners/hero-banner-doctors-behind-every-result-1080x1350.webp" media="(max-width: 1023px)" fetchpriority="high" />
     <link href="assets/css/main.css?v=20261022" rel="stylesheet" />
-    <link href="assets/css/hero-carousel.css?v=20261022" rel="stylesheet" />
-    <script src="assets/js/hero-carousel.js?v=20261022" defer></script>
+    <link href="assets/css/banner-carousel.css?v=20261022" rel="stylesheet" />
+    <script src="assets/js/banner-carousel.js?v=20261022" defer></script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -97,7 +93,7 @@
   ]
 }
     </script>
-  <link rel="stylesheet" href="/assets/css/site-header.css?v=20261022d"><script src="/assets/js/site-header.js?v=20261022c" defer></script></head>
+  <link rel="stylesheet" href="/assets/css/site-header.css?v=20261022e"><script src="/assets/js/site-header.js?v=20261022c" defer></script></head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div class="top-strip">
@@ -124,96 +120,46 @@
       </div>
     </header>
     <main id="main">
-      <section class="hero">
-        <div class="container row">
-          <div>
-            <h1>Doctors Behind Every Result.</h1>
-            <p class="lead">
-              Our laboratory is medically led by qualified pathologists who
-              oversee testing and reporting, and review every reported result.
-            </p>
-            <div class="hero-cta">
-              <a class="btn-primary" href="tel:+919311193111">
-                <i class="bi bi-telephone-fill"></i>
-                Call +91 93111 93111
-              </a>
-              <a
-                class="btn-secondary"
-                href="https://wa.me/919311193111"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="bi bi-whatsapp"></i>
-                WhatsApp
-              </a>
+      <section class="banner-hero" aria-labelledby="home-hero-title">
+        <h1 id="home-hero-title" class="sr-only">Doctors Behind Every Result. 24x7 pathology lab in Greater Kailash-I, South Delhi</h1>
+        <div class="banner-carousel" role="region" aria-roledescription="carousel" aria-label="Dr Bhasin's Lab highlights">
+          <div class="banner-track">
+            <div class="banner-slide is-active" role="group" aria-roledescription="slide" aria-label="Doctors behind every result (1 of 3)">
+              <picture>
+                <source media="(max-width: 1023px)" srcset="assets/img/banners/hero-banner-doctors-behind-every-result-1080x1350.webp" width="1080" height="1350">
+                <img src="assets/img/banners/hero-banner-doctors-behind-every-result-1920x720.webp" srcset="assets/img/banners/hero-banner-doctors-behind-every-result-1920x720.webp 1920w, assets/img/banners/hero-banner-doctors-behind-every-result-3840x1440.webp 3840w" sizes="(min-width: 1920px) 1920px, 100vw" width="1920" height="720" alt="Doctors Behind Every Result. Dr Bhasin&#x27;s Lab is medically led by qualified pathologists. 26 years, open 24x7x365, NABL accredited." decoding="async" fetchpriority="high">
+              </picture>
+              <a class="banner-hotspot" href="tel:+919311193111" aria-label="Call Dr Bhasin&#x27;s Lab on +91 93111 93111" style="--l:7.813%;--t:57.112%;--w:14.948%;--h:9.444%;--ml:5.926%;--mt:70.889%;--mw:59.261%;--mh:7.704%"></a>
+              <a class="banner-hotspot" href="https://wa.me/919311193111" target="_blank" rel="noopener" aria-label="Chat with Dr Bhasin&#x27;s Lab on WhatsApp" style="--l:23.594%;--t:57.112%;--w:11.054%;--h:9.444%;--ml:67.038%;--mt:70.889%;--mw:27.036%;--mh:7.704%"></a>
             </div>
-            <div class="hero-stats">
-              <div class="hero-stat hero-stat-badge">
-                <img
-                  src="assets/img/badge-26-years-pathology-blue-cutout-v2.webp"
-                  alt="26 Years, established in 2000"
-                  width="1254"
-                  height="1254"
-                  decoding="async"
-                />
-              </div>
-              <div class="hero-stat hero-stat-badge">
-                <img
-                  src="assets/img/badge-24x7-blue-cyan-cutout-v1.webp"
-                  alt="24 by 7 by 365, always open"
-                  width="1254"
-                  height="1254"
-                  decoding="async"
-                />
-              </div>
-              <div class="hero-stat hero-stat-accreditation">
-                <img
-                  class="hero-stat-accreditation-mark"
-                  src="assets/img/nabl-accreditation-mark-blue-v2.webp"
-                  alt="ILAC MRA and NABL accreditation mark, certificate NABLM0626DL08110"
-                  width="547"
-                  height="302"
-                  decoding="async"
-                />
-                <strong>NABL accredited</strong>
-              </div>
+            <div class="banner-slide" role="group" aria-roledescription="slide" aria-label="Blood tests at home, 6 AM to midnight (2 of 3)" aria-hidden="true" inert>
+              <picture>
+                <source media="(max-width: 1023px)" srcset="assets/img/banners/hero-banner-home-collection-1080x1350.webp" width="1080" height="1350">
+                <img src="assets/img/banners/hero-banner-home-collection-1920x720.webp" srcset="assets/img/banners/hero-banner-home-collection-1920x720.webp 1920w, assets/img/banners/hero-banner-home-collection-3840x1440.webp 3840w" sizes="(min-width: 1920px) 1920px, 100vw" width="1920" height="720" alt="Blood tests at home, 6 AM to midnight. Home sample collection across Delhi NCR in 30-minute slots." decoding="async" loading="lazy">
+              </picture>
+              <a class="banner-hotspot" href="/home-collection.html" aria-label="Book home sample collection" style="--l:7.813%;--t:55.015%;--w:17.29%;--h:9.444%;--ml:5.926%;--mt:67.949%;--mw:59.261%;--mh:7.704%"></a>
+              <a class="banner-hotspot" href="https://wa.me/919311193111?text=Hello%2C%20I%20would%20like%20to%20book%20a%20home%20sample%20collection." target="_blank" rel="noopener" aria-label="Book home collection on WhatsApp" style="--l:25.936%;--t:55.015%;--w:11.054%;--h:9.444%;--ml:67.038%;--mt:67.949%;--mw:27.036%;--mh:7.704%"></a>
+            </div>
+            <div class="banner-slide" role="group" aria-roledescription="slide" aria-label="CGHS and CAPF Ayushman empanelled lab (3 of 3)" aria-hidden="true" inert>
+              <picture>
+                <source media="(max-width: 1023px)" srcset="assets/img/banners/hero-banner-cghs-capf-1080x1350.webp" width="1080" height="1350">
+                <img src="assets/img/banners/hero-banner-cghs-capf-1920x720.webp" srcset="assets/img/banners/hero-banner-cghs-capf-1920x720.webp 1920w, assets/img/banners/hero-banner-cghs-capf-3840x1440.webp 3840w" sizes="(min-width: 1920px) 1920px, 100vw" width="1920" height="720" alt="CGHS and CAPF Ayushman empanelled lab in Delhi. Blood tests at home or at our lab in Greater Kailash&amp;#8209;I." decoding="async" loading="lazy">
+              </picture>
+              <a class="banner-hotspot" href="/cghs-empanelled/" aria-label="CGHS and CAPF Ayushman details" style="--l:7.813%;--t:65.454%;--w:16.701%;--h:9.444%;--ml:5.926%;--mt:70.561%;--mw:59.261%;--mh:7.704%"></a>
+              <a class="banner-hotspot" href="https://wa.me/919311193111?text=Hello%2C%20I%20have%20a%20CGHS%2FCAPF%20card%20and%20would%20like%20to%20book%20a%20test." target="_blank" rel="noopener" aria-label="Send your CGHS or CAPF card on WhatsApp" style="--l:25.347%;--t:65.454%;--w:11.054%;--h:9.444%;--ml:67.038%;--mt:70.561%;--mw:27.036%;--mh:7.704%"></a>
             </div>
           </div>
-          <div class="hero-image hero-carousel" role="region" aria-roledescription="carousel" aria-label="A look inside Dr Bhasin's Lab">
-            <figure class="hero-carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
-              <img src="assets/img/hero-gk1-reception-welcome-cropped-v3.webp" width="1400" height="793" alt="Patients being welcomed at Dr Bhasin's Lab reception" fetchpriority="high" decoding="async" />
-              <figcaption>A warm welcome, every time</figcaption>
-            </figure>
-            <figure class="hero-carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 5" hidden>
-              <img src="assets/img/cghs/visit/lab-building.webp" width="382" height="510" loading="lazy" alt="Exterior of Dr Bhasin's Lab building in Greater Kailash-I" decoding="async" />
-              <figcaption>Your neighbourhood lab in Greater Kailash-I</figcaption>
-            </figure>
-            <figure class="hero-carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 5" hidden>
-              <img src="assets/img/cghs/visit/reception.webp" width="680" height="510" loading="lazy" alt="Reception desk and waiting area at Dr Bhasin's Lab" decoding="async" />
-              <figcaption>Care begins with a welcoming space</figcaption>
-            </figure>
-            <figure class="hero-carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 5" hidden>
-              <img src="assets/img/cghs/visit/pediatric-both.webp" width="382" height="510" loading="lazy" alt="Colourful paediatric sample collection room with a child-sized chair" decoding="async" />
-              <figcaption>A cheerful space for our youngest patients</figcaption>
-            </figure>
-            <figure class="hero-carousel-slide" role="group" aria-roledescription="slide" aria-label="5 of 5" hidden>
-              <img src="assets/img/cghs/visit/adult-collection-room.webp" width="383" height="510" loading="lazy" alt="Adult sample collection room with a reclining chair" decoding="async" />
-              <figcaption>A comfortable space for sample collection</figcaption>
-            </figure>
-            <button class="hero-carousel-arrow hero-carousel-prev" type="button" aria-label="Previous lab photo">&#8249;</button>
-            <button class="hero-carousel-arrow hero-carousel-next" type="button" aria-label="Next lab photo">&#8250;</button>
-            <div class="hero-carousel-controls">
-              <button class="hero-carousel-pause" type="button" aria-label="Pause slideshow" aria-pressed="false"><i class="bi bi-pause-fill" aria-hidden="true"></i></button>
-              <div class="hero-carousel-dots" aria-label="Choose a lab photo">
-                <button type="button" aria-label="Show welcome photo" aria-current="true"></button>
-                <button type="button" aria-label="Show lab building photo" aria-current="false"></button>
-                <button type="button" aria-label="Show reception photo" aria-current="false"></button>
-                <button type="button" aria-label="Show paediatric room photo" aria-current="false"></button>
-                <button type="button" aria-label="Show adult collection room photo" aria-current="false"></button>
-              </div>
+          <div class="banner-controls">
+            <button class="banner-prev" type="button" aria-label="Previous slide"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+            <div class="banner-dots">
+              <button type="button" aria-label="Show slide 1: Doctors behind every result" aria-current="true"></button>
+              <button type="button" aria-label="Show slide 2: Blood tests at home, 6 AM to midnight" aria-current="false"></button>
+              <button type="button" aria-label="Show slide 3: CGHS and CAPF Ayushman empanelled lab" aria-current="false"></button>
             </div>
-            <span class="hero-carousel-status" aria-live="polite" aria-atomic="true"></span>
+            <button class="banner-pause" type="button" aria-label="Pause slideshow"><i class="bi bi-pause-fill" aria-hidden="true"></i></button>
+            <button class="banner-next" type="button" aria-label="Next slide"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
           </div>
+          <span class="banner-status" aria-live="polite" aria-atomic="true"></span>
         </div>
       </section>
       <section class="section patient-service-section">

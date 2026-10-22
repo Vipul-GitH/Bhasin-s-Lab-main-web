@@ -55,7 +55,8 @@
 .header .navmenu a{font-family:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif!important;font-size:.9rem!important;font-weight:600!important;line-height:1.4!important;letter-spacing:0!important;text-transform:none!important;padding:12px 9px!important;white-space:nowrap}
 .header .navmenu .dropdown ul a{white-space:normal;padding:11px 13px!important}
 .header-actions{flex:0 0 auto}
-.header .header-actions{display:flex;gap:10px}
+@media(min-width:1081px){.header .header-actions{display:flex;gap:10px}}
+@media(max-width:1080px){.header .header-actions{display:none!important}}
 .header .header-actions .header-action-icon{width:42px!important;height:42px!important;flex:0 0 auto!important;padding:0!important}
 @media(min-width:1081px){.header .navmenu>ul{display:flex!important;align-items:center;flex-wrap:nowrap;gap:2px}}
 @media(min-width:1081px) and (max-width:1339px){.header .container{gap:10px}.header .logo img{width:170px!important}.header .navmenu a{font-size:.82rem!important;padding:12px 6px!important}}

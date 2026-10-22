@@ -1,0 +1,152 @@
+/* Homepage banner carousel (added 22 Oct 2026).
+   Each slide is one designed image (desktop 1920x720, mobile 1080x1350).
+   The Call / WhatsApp / Book buttons drawn in the image are made clickable by
+   transparent links ("hotspots") positioned in percentages over the drawn
+   buttons, so they stay aligned at every screen size.
+   Hotspot positions: --l/--t/--w/--h (desktop image), --ml/--mt/--mw/--mh
+   (mobile image). If a banner image is redesigned, update these numbers. */
+
+.banner-hero {
+  background: #f7f5f0;
+  border-bottom: 1px solid #e3e6e2;
+}
+.banner-carousel {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.banner-track {
+  display: grid;
+}
+.banner-slide {
+  grid-area: 1 / 1;
+  position: relative;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0s linear 0.6s;
+}
+.banner-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s ease, visibility 0s;
+}
+.banner-slide picture,
+.banner-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Clickable areas over the buttons drawn in the image */
+.banner-hotspot {
+  position: absolute;
+  left: var(--l);
+  top: var(--t);
+  width: var(--w);
+  height: var(--h);
+  border-radius: 6px;
+  z-index: 2;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+.banner-hotspot::after {
+  /* Slightly larger tap area than the drawn button (easier on phones). */
+  content: "";
+  position: absolute;
+  inset: -6px;
+}
+.banner-hotspot:hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 18px rgba(7, 63, 69, 0.25);
+}
+.banner-hotspot:focus-visible {
+  outline: 3px solid #4eaa83;
+  outline-offset: 3px;
+}
+
+/* Controls bar under the banner */
+.banner-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px 14px;
+}
+.banner-controls button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid #c9d8d2;
+  border-radius: 50%;
+  background: #fff;
+  color: #073f45;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.banner-controls button:hover {
+  background: #eaf4ef;
+}
+.banner-controls button:focus-visible {
+  outline: 3px solid #4eaa83;
+  outline-offset: 2px;
+}
+.banner-dots {
+  display: flex;
+  gap: 2px;
+}
+.banner-controls .banner-dots button {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+}
+.banner-dots button::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid #073f45;
+  border-radius: 50%;
+}
+.banner-dots button[aria-current="true"]::before {
+  background: #073f45;
+}
+.banner-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.banner-hero .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Phones and small tablets use the tall mobile image */
+@media (max-width: 1023px) {
+  .banner-carousel {
+    max-width: 600px;
+  }
+  .banner-hotspot {
+    left: var(--ml);
+    top: var(--mt);
+    width: var(--mw);
+    height: var(--mh);
+    border-radius: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-slide,
+  .banner-slide.is-active {
+    transition: none;
+  }
+}
