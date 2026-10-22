@@ -1,0 +1,42 @@
+# ------------------------------------------------------------------
+# Files that must NOT be uploaded to GitHub
+# ------------------------------------------------------------------
+
+# Local development server (only for previewing on your computer)
+server.py
+
+# Secrets and server configuration — never commit these
+leads-config.php
+**/leads-config.php
+.env
+.env.*
+*.env
+*.pem
+*.key
+secrets/
+
+# Internal working notes (unverified claims, "do not publish" lists)
+CONTENT_VERIFICATION_REGISTER.md
+
+# Backups made while editing
+*-BACKUP-*/
+*.bak
+*.orig
+*~
+
+# Logs and temporary files
+*.log
+*.tmp
+.cache/
+
+# Tools
+node_modules/
+__pycache__/
+*.pyc
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
