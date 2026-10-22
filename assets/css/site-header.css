@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+.top-strip{background:#064b55;color:#fff;font-size:12px}.top-strip .container{width:min(1240px,calc(100% - 2rem));min-height:36px;margin:auto;display:flex;align-items:center;justify-content:space-between}.top-strip .group{display:flex;gap:18px}.top-strip a,.top-strip span{color:#fff;text-decoration:none;display:inline-flex;gap:6px;align-items:center}.topbar-report-link{padding:5px 10px;border:1px solid #ffffff8c;border-radius:999px}
+.header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #054e5d14}.header .container{width:min(1240px,calc(100% - 2rem));min-height:80px;margin:auto;display:flex;align-items:center;gap:24px}.logo{display:flex;align-items:center;margin-right:auto}.logo img{width:235px;max-height:62px;object-fit:contain}.navmenu>ul{display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0}.navmenu li{position:relative}.navmenu a{display:flex;align-items:center;gap:6px;padding:12px 10px;color:#27434a;font-weight:650;font-size:.91rem;text-decoration:none;border-radius:9px}.navmenu a:hover,.navmenu a:focus-visible,.navmenu a.active{color:#054e5d!important;background:#e8f6f1!important}.navmenu .dropdown>ul{position:absolute;top:100%;left:0;display:none;min-width:230px;padding:8px;background:#fff;border:1px solid #d8e6e2;border-radius:0 0 12px 12px;box-shadow:0 16px 36px #043f4a29;z-index:30}.navmenu .dropdown:hover>ul,.navmenu .dropdown:focus-within>ul,.navmenu .dropdown.open>ul{display:block}.navmenu .dropdown:hover>a,.navmenu .dropdown:focus-within>a{background:#e8f6f1!important;color:#054e5d!important}.navmenu .dropdown ul a{padding:11px 13px}.header-actions{display:flex;gap:10px}.header-action-icon{display:inline-flex!important;align-items:center;justify-content:center;width:42px;height:42px;padding:0!important;border-radius:50%!important}.header-action-icon:first-child{background:#f5fbf8;border:1px solid #064b55;color:#064b55}.header-action-icon:last-child{background:#054e5d;border:1px solid #054e5d;color:#fff}.mobile-nav-toggle{display:none}
+@media(max-width:1080px){.mobile-nav-toggle{display:block}.navmenu>ul{display:none}.navmenu.mobile-open>ul{display:block;position:absolute;right:1rem;top:72px;background:#fff;padding:8px;min-width:250px;box-shadow:0 16px 36px #043f4a29}.navmenu .dropdown>ul{position:static;display:block;border:0;box-shadow:none}.header-actions{display:none}}
+@media(max-width:700px){.top-strip .group:last-child{display:none}.top-strip .container{justify-content:center}.header .container{min-height:70px}.logo img{width:205px}}
+
+/* Smooth cross-document navigation without converting the site to an SPA. */
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:180ms;animation-timing-function:ease-out}
+::view-transition-old(root){animation-name:page-fade-out}
+::view-transition-new(root){animation-name:page-fade-in}
+@keyframes page-fade-out{to{opacity:0;transform:translateY(-3px)}}
+@keyframes page-fade-in{from{opacity:0;transform:translateY(3px)}}
+@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation-duration:1ms}}
+
+/* Keep every page on the homepage navbar's exact interaction styling. */
+.header{background:rgba(255,255,255,.96);backdrop-filter:blur(14px)}
+.header .navmenu{font-family:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.7}
+.header .navmenu ul{list-style:none;margin:0}
+.header .navmenu li{list-style:none}
+.header .navmenu a{padding:12px 10px;border-radius:9px;font-size:.91rem;font-weight:650;color:#27434a;box-shadow:none;transition:color 180ms ease,background-color 180ms ease}
+.header .navmenu a:hover,.header .navmenu a:focus-visible,.header .navmenu a.active,.header .navmenu .dropdown:hover>a,.header .navmenu .dropdown:focus-within>a{color:#073f45!important;background:#eaf4ef!important;box-shadow:inset 0 -2px #4eaa83}
+.header .navmenu .dropdown ul a{padding:11px 13px;line-height:1.45;white-space:normal}
+.header .navmenu .dropdown ul a:hover,.header .navmenu .dropdown ul a:focus-visible,.header .navmenu .dropdown ul a.active{box-shadow:none}
+.header .navmenu .dropdown>ul{top:100%;left:0;right:auto;width:max-content;min-width:235px;max-width:calc(100vw - 32px);padding:9px;border-radius:14px;box-shadow:0 12px 34px rgba(7,63,69,.08)}
+.header .navmenu .dropdown:last-child>ul{left:auto;right:0}
+@media(max-width:1080px){.header .navmenu .dropdown>ul{width:100%;min-width:0;max-width:none}}
+.navmenu .dropdown:hover>ul,.navmenu .dropdown:focus-within>ul,.navmenu .dropdown.open>ul{display:block}
+.header-actions .header-action-icon{transition:transform 180ms ease,color 180ms ease,background-color 180ms ease,border-color 180ms ease,box-shadow 180ms ease}
+.header-actions .header-action-icon:hover{transform:translateY(-2px);box-shadow:0 7px 17px rgba(5,78,93,.16)}

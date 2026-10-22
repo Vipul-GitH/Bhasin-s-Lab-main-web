@@ -13,7 +13,7 @@
     <meta name="theme-color" content="#054E5D" />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://bhasinpathlabs.com/" />
-    <link rel="icon" href="assets/img/dr-bhasins-lab-mark.png" />
+    <link rel="icon" href="assets/img/dr-bhasins-lab-mark.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,6 +31,8 @@
       fetchpriority="high"
     />
     <link href="assets/css/main.css?v=20261008" rel="stylesheet" />
+    <link href="assets/css/hero-carousel.css?v=2" rel="stylesheet" />
+    <script src="assets/js/hero-carousel.js?v=3" defer></script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,7 +43,7 @@
   "@id": "https://bhasinpathlabs.com/#organization",
   "name": "Dr Bhasin's Lab",
   "url": "https://bhasinpathlabs.com/",
-  "logo": "https://bhasinpathlabs.com/assets/img/dr-bhasins-lab-mark.png",
+  "logo": "https://bhasinpathlabs.com/assets/img/dr-bhasins-lab-mark.webp",
   "telephone": "+91-93111-93111",
   "email": "query@bhasinpathlabs.com",
   "hasMap": "https://maps.app.goo.gl/Xfe5RsXdgKoxWTss5",
@@ -87,88 +89,10 @@
   ]
 }
     </script>
-  </head>
+  <link rel="stylesheet" href="/assets/css/site-header.css?v=9"><script src="/assets/js/site-header.js" defer></script></head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
-    <div class="top-strip">
-      <div class="container">
-        <div class="group">
-          <span>
-            <i class="bi bi-clock"></i>
-            Open 24x7x365
-          </span>
-          <span>
-            <i class="bi bi-geo-alt"></i>
-            S-35, Greater Kailash I, New Delhi
-          </span>
-        </div>
-        <div class="group">
-          <a
-            class="topbar-report-link"
-            href="https://labmate.bhasinpathlabs.com/downloadnew/PatientLogin.aspx"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="bi bi-file-earmark-arrow-down"></i>
-            Download report or receipt
-          </a>
-          <a href="tel:+919311193111">
-            <i class="bi bi-telephone"></i>
-            +91 93111 93111
-          </a>
-        </div>
-      </div>
-    </div>
-    <header class="header">
-      <div class="container header-inner">
-        <a href="/" class="logo">
-          <img
-            src="assets/img/dr-bhasins-lab-logo.png"
-            alt="Dr Bhasin's Lab — Trusted Quality and Service"
-            width="1927"
-            height="652"
-            decoding="async"
-          />
-        </a>
-                <nav class="navmenu" aria-label="Primary navigation">
-          <ul>
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="home-collection.html">Home Collection</a></li>
-            <li><a href="test-library/flu-testing/">Flu Testing</a></li>
-            <li><a href="test-library/">Test Library</a></li>
-            <li><a href="health-checkups/">Health Checkups</a></li>
-            <li class="dropdown"><a href="cghs-empanelled/"><span>Panels &amp; Partnerships</span> <i class="bi bi-chevron-down"></i></a><ul><li><a href="cghs-empanelled/">CGHS &amp; CAPF Ayushman</a></li></ul></li>
-          </ul>
-          <button
-            class="mobile-nav-toggle"
-            aria-label="Toggle navigation"
-            aria-expanded="false"
-          >
-            <i class="bi bi-list"></i>
-          </button>
-        </nav>
-        <div class="header-actions">
-          <a
-            class="btn-outline btn-sm header-action-icon"
-            href="https://wa.me/919311193111"
-            target="_blank"
-            rel="noopener"
-            aria-label="Chat with the lab on WhatsApp"
-            title="WhatsApp"
-          >
-            <i class="bi bi-whatsapp" aria-hidden="true"></i>
-          </a>
-          <a
-            class="btn-primary btn-sm header-action-icon"
-            href="tel:+919311193111"
-            aria-label="Call Dr Bhasin's Lab"
-            title="Call the lab"
-          >
-            <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-    </header>
+    <div data-site-header></div>
     <main id="main">
       <section class="hero">
         <div class="container row">
@@ -225,14 +149,39 @@
               </div>
             </div>
           </div>
-          <div class="hero-image">
-            <div class="floating-card">
-              <strong>Real people, not a faceless marketplace</strong>
-              <span>
-                Call or WhatsApp for preparation, price, sample and reporting
-                guidance.
-              </span>
+          <div class="hero-image hero-carousel" role="region" aria-roledescription="carousel" aria-label="A look inside Dr Bhasin's Lab">
+            <figure class="hero-carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
+              <img src="assets/img/hero-gk1-reception-welcome-cropped-v3.webp" alt="Patients being welcomed at Dr Bhasin's Lab reception" fetchpriority="high" decoding="async" />
+              <figcaption>A warm welcome, every time</figcaption>
+            </figure>
+            <figure class="hero-carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 5" hidden>
+              <img src="assets/img/cghs/visit/lab-building.webp" alt="Exterior of Dr Bhasin's Lab building in Greater Kailash-I" decoding="async" />
+              <figcaption>Your neighbourhood lab in Greater Kailash-I</figcaption>
+            </figure>
+            <figure class="hero-carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 5" hidden>
+              <img src="assets/img/cghs/visit/reception.webp" alt="Reception desk and waiting area at Dr Bhasin's Lab" decoding="async" />
+              <figcaption>Care begins with a welcoming space</figcaption>
+            </figure>
+            <figure class="hero-carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 5" hidden>
+              <img src="assets/img/cghs/visit/pediatric-both.webp" alt="Colourful paediatric sample collection room with a child-sized chair" decoding="async" />
+              <figcaption>A cheerful space for our youngest patients</figcaption>
+            </figure>
+            <figure class="hero-carousel-slide" role="group" aria-roledescription="slide" aria-label="5 of 5" hidden>
+              <img src="assets/img/cghs/visit/adult-collection-room.webp" alt="Adult sample collection room with a reclining chair" decoding="async" />
+              <figcaption>A comfortable space for sample collection</figcaption>
+            </figure>
+            <button class="hero-carousel-arrow hero-carousel-prev" type="button" aria-label="Previous lab photo">&#8249;</button>
+            <button class="hero-carousel-arrow hero-carousel-next" type="button" aria-label="Next lab photo">&#8250;</button>
+            <div class="hero-carousel-controls">
+              <div class="hero-carousel-dots" aria-label="Choose a lab photo">
+                <button type="button" aria-label="Show welcome photo" aria-current="true"></button>
+                <button type="button" aria-label="Show lab building photo" aria-current="false"></button>
+                <button type="button" aria-label="Show reception photo" aria-current="false"></button>
+                <button type="button" aria-label="Show paediatric room photo" aria-current="false"></button>
+                <button type="button" aria-label="Show adult collection room photo" aria-current="false"></button>
+              </div>
             </div>
+            <span class="hero-carousel-status" aria-live="polite" aria-atomic="true"></span>
           </div>
         </div>
       </section>
@@ -592,7 +541,7 @@
               aria-label="Open NABL certificate NABLM0626DL08110"
             >
               <img
-                src="assets/img/nabl-certificate-preview.png"
+                src="assets/img/nabl-certificate-preview.webp"
                 alt="NABL certificate of accreditation for Dr. Bhasin's Lab"
                 loading="lazy"
                 decoding="async"
@@ -975,7 +924,7 @@
           <div>
             <a href="/" class="footer-logo">
               <img
-                src="assets/img/dr-bhasins-lab-logo.png"
+                src="assets/img/dr-bhasins-lab-logo.webp"
                 alt="Dr Bhasin's Lab"
               />
             </a>
