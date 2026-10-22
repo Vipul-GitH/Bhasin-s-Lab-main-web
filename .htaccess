@@ -77,3 +77,18 @@ Options -Indexes
 
 ErrorDocument 404 /404.html
 ErrorDocument 410 /404.html
+
+# --- Block internal project files (added 2026-10-22) ---
+# README, the content verification register, licence notes, Python helper
+# scripts and any git metadata must not be downloadable from the live site.
+<FilesMatch "(\.(md|py|bak|log|sql)|^TEMPLATE_LICENSE\.txt)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+RedirectMatch 404 (^|/)\.git(/|$)
+# --- end internal file block ---

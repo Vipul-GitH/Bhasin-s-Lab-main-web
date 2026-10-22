@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex,nofollow" />
     <title>Reusable Callback Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
     <style>
       /* Copy this style block to the other project's stylesheet. */
       :root {
@@ -24,7 +27,7 @@
         padding: 24px;
         background: #f6f8f8;
         color: var(--callback-ink);
-        font-family: Arial, sans-serif;
+        font-family: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
       }
 
       .callback-card {
@@ -101,6 +104,14 @@
         height: 16px;
         margin: 3px 0 0;
         accent-color: var(--callback-accent);
+      }
+
+      .callback-hp {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
       }
 
       .callback-note,
@@ -242,9 +253,9 @@
               type="tel"
               inputmode="numeric"
               autocomplete="tel"
-              pattern="[0-9]{10}"
+              pattern="[6-9][0-9]{9}"
               maxlength="10"
-              title="Enter a 10-digit mobile number"
+              title="Enter a 10-digit Indian mobile number"
               required
             />
           </div>
@@ -273,6 +284,11 @@
           </div>
         </div>
 
+        <div class="callback-hp" aria-hidden="true">
+          <label for="callback-website">Leave this field empty</label>
+          <input id="callback-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+
         <button class="callback-submit" type="submit">Submit enquiry</button>
         <div class="callback-status" aria-live="polite"></div>
       </form>
@@ -280,11 +296,9 @@
 
     <script>
       (() => {
-        // Change these two values if the API endpoint or key changes.
-        const LEADS_ENDPOINT =
-          "https://labmate.bhasinpathlabs.com:4672/api/v1/leads";
-        const API_KEY =
-          "469eb005e7b9095e336ff74ca1171b5158ed6c2e07c10fa393de1070572fc0c0";
+        // Submissions go to submit.php on this website, which adds the secret
+        // Leads API key on the server. Never put the API key in this file.
+        const RELAY_ENDPOINT = "submit.php";
 
         const query = new URLSearchParams(window.location.search);
         const embedMode = query.get("embed");
@@ -312,35 +326,17 @@
           status.textContent = "Submitting your enquiry...";
 
           try {
-            const formData = new FormData(form);
-            const payload = new FormData();
+            const payload = new FormData(form);
+            if (source) payload.append("source", source);
 
-            // These are the exact field names expected by the Leads API.
-            payload.append(
-              "name",
-              String(formData.get("name") || "").trim(),
-            );
-            payload.append(
-              "phone",
-              String(formData.get("mobile") || "").trim(),
-            );
-            payload.append(
-              "remarks",
-              [String(formData.get("helpWith") || "").trim(), source]
-                .filter(Boolean)
-                .join("/"),
-            );
-
-            const response = await fetch(LEADS_ENDPOINT, {
+            const response = await fetch(RELAY_ENDPOINT, {
               method: "POST",
-              headers: {
-                "X-API-Key": API_KEY,
-              },
               body: payload,
+              credentials: "same-origin",
             });
 
             if (!response.ok) {
-              throw new Error(`Leads API returned HTTP ${response.status}`);
+              throw new Error(`Callback relay returned HTTP ${response.status}`);
             }
 
             form.reset();

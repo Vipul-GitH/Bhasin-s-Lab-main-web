@@ -12,10 +12,11 @@ const callbackModal=document.querySelector("#callback-modal");
 const callbackClose=document.querySelector(".callback-modal-close");
 const callbackFrame=document.querySelector("#callback-form-frame");
 const sharedFormUrl="../../integrations/callback-form/callback-form.html?embed=modal&v=4&source=flu-test";
+if(callbackModal&&callbackClose&&callbackFrame){
 const openCallbackModal=(trigger)=>{
   const service=trigger.dataset.callbackService||"Home collection";
   callbackFrame.src=`${sharedFormUrl}&service=${encodeURIComponent(service)}`;
-  if(!callbackModal.open)callbackModal.show();
+  if(!callbackModal.open){if(typeof callbackModal.showModal==="function")callbackModal.showModal();else callbackModal.setAttribute("open","");}
   document.body.classList.add("modal-open");
 };
 document.querySelectorAll(".callback-trigger").forEach(trigger=>{
@@ -35,4 +36,5 @@ callbackModal.addEventListener("close",()=>document.body.classList.remove("modal
 document.addEventListener("keydown",event=>{
   if(event.key==="Escape"&&callbackModal.open)callbackModal.close();
 });
+}
 window.lucide?.createIcons({attrs:{"aria-hidden":"true"}});

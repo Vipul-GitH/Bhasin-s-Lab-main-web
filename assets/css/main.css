@@ -2538,3 +2538,30 @@ body.menu-open {
     white-space: nowrap;
   }
 }
+
+/* ------------------------------------------------------------------
+   Review fixes, 22 Oct 2026
+   ------------------------------------------------------------------ */
+
+/* One heading weight: .content-title (e.g. "Before you book") now matches
+   .section-title h2 instead of rendering in heavy bold. */
+.content-title {
+  font-weight: 500;
+}
+
+/* Images carry width/height attributes for layout stability; keep their
+   natural aspect ratio wherever CSS sets only the width. Zero specificity,
+   so any rule that sets a height still wins. */
+:where(img[width][height]) {
+  height: auto;
+}
+
+/* Mobile: headline and call buttons first, photo carousel after them. */
+@media (max-width: 1080px) {
+  .hero .row > div:first-child {
+    order: 1;
+  }
+  .hero .row > .hero-image {
+    order: 2;
+  }
+}

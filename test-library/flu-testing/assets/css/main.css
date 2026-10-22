@@ -43,3 +43,6 @@ body.modal-open{overflow:auto}
 /* Search-friendly navigation and medical content notes. */
 .seo-breadcrumb{display:flex;align-items:center;gap:9px;padding:12px max(5vw,24px);background:#f3f8f6;color:#637b80;font-size:12px;border-bottom:1px solid #dce8e4}.seo-breadcrumb a{color:#087052;font-weight:700}.seo-breadcrumb a:hover{text-decoration:underline}.medical-disclaimer{margin-top:20px;padding:14px 16px;border-left:3px solid #218b66;background:#f7fbf9;color:#4d696e;font-size:13px}.service-area{max-width:780px;line-height:1.7}
 @media(max-width:620px){.seo-breadcrumb{padding:10px 16px;overflow-x:auto;white-space:nowrap}}
+
+/* Keep natural aspect ratio for images that carry width/height attributes (added 22 Oct 2026). */
+:where(img[width][height]){height:auto}

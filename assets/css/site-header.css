@@ -28,3 +28,7 @@
 .navmenu .dropdown:hover>ul,.navmenu .dropdown:focus-within>ul,.navmenu .dropdown.open>ul{display:block}
 .header-actions .header-action-icon{transition:transform 180ms ease,color 180ms ease,background-color 180ms ease,border-color 180ms ease,box-shadow 180ms ease}
 .header-actions .header-action-icon:hover{transform:translateY(-2px);box-shadow:0 7px 17px rgba(5,78,93,.16)}
+
+/* Keep the six top-level links on one row between tablet and wide desktop
+   (added 22 Oct 2026 with the "24x7 Lab" link). */
+@media(min-width:1081px) and (max-width:1260px){.header .container{gap:14px}.logo img{width:200px}.header .navmenu a{padding:12px 7px;font-size:.86rem}.header .navmenu>ul{gap:0}}
