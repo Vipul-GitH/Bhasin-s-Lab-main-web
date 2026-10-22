@@ -28,6 +28,23 @@
     if (playing && !paused && !document.hidden) timer = setInterval(() => show(current + 1), INTERVAL_MS);
   };
 
+  // Slides 2+ keep their image addresses in data-src/data-srcset so they don't
+  // compete with the first banner while the page is loading. They load when
+  // shown, or shortly after the page has finished loading.
+  const loadSlide = (slide) => {
+    slide.querySelectorAll('[data-srcset]').forEach((el) => {
+      el.setAttribute('srcset', el.getAttribute('data-srcset'));
+      el.removeAttribute('data-srcset');
+    });
+    slide.querySelectorAll('img[data-src]').forEach((img) => {
+      img.setAttribute('src', img.getAttribute('data-src'));
+      img.removeAttribute('data-src');
+    });
+  };
+  const loadAllSlides = () => slides.forEach(loadSlide);
+  if (document.readyState === 'complete') setTimeout(loadAllSlides, 1500);
+  else window.addEventListener('load', () => setTimeout(loadAllSlides, 1500), { once: true });
+
   const show = (index, announce = false) => {
     current = (index + slides.length) % slides.length;
     slides.forEach((slide, i) => {
@@ -36,10 +53,7 @@
       slide.setAttribute('aria-hidden', String(!active));
       if (active) slide.removeAttribute('inert');
       else slide.setAttribute('inert', '');
-      if (active) {
-        // Load a lazy slide image as soon as it becomes visible.
-        slide.querySelectorAll('img[loading="lazy"]').forEach((img) => { img.loading = 'eager'; });
-      }
+      if (active) loadSlide(slide);
     });
     dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === current)));
     if (announce && status) {

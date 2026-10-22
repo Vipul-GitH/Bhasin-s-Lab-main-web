@@ -1,0 +1,124 @@
+/* Icons used on this website only: a subset of Bootstrap Icons 1.11.3 (MIT licence).
+   Replaces the full library from cdn.jsdelivr.net (22 Oct 2026).
+   To use a NEW icon: add its class here with the code from
+   https://icons.getbootstrap.com (or ask Claude to rebuild this subset). */
+@font-face {
+  font-display: block;
+  font-family: "bootstrap-icons";
+  src: url("/assets/fonts/bootstrap-icons-subset.woff2?v=20261022") format("woff2");
+}
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.bi-activity::before { content: "\f66b"; }
+.bi-airplane::before { content: "\f7cd"; }
+.bi-arrow-down::before { content: "\f128"; }
+.bi-arrow-repeat::before { content: "\f130"; }
+.bi-arrow-right::before { content: "\f138"; }
+.bi-arrow-up-right::before { content: "\f144"; }
+.bi-balloon-heart::before { content: "\f708"; }
+.bi-balloon-heart-fill::before { content: "\f707"; }
+.bi-bandaid::before { content: "\f681"; }
+.bi-box-seam::before { content: "\f1c7"; }
+.bi-briefcase-fill::before { content: "\f1cb"; }
+.bi-building-check::before { content: "\f868"; }
+.bi-bullseye::before { content: "\f1de"; }
+.bi-calendar2-check::before { content: "\f1f8"; }
+.bi-cash-coin::before { content: "\f632"; }
+.bi-chat-heart::before { content: "\f714"; }
+.bi-chat-heart-fill::before { content: "\f713"; }
+.bi-chat-square-text-fill::before { content: "\f263"; }
+.bi-check2-circle::before { content: "\f270"; }
+.bi-chevron-down::before { content: "\f282"; }
+.bi-chevron-left::before { content: "\f284"; }
+.bi-chevron-right::before { content: "\f285"; }
+.bi-clipboard-check::before { content: "\f28b"; }
+.bi-clipboard2-data::before { content: "\f727"; }
+.bi-clipboard2-pulse::before { content: "\f730"; }
+.bi-clipboard2-pulse-fill::before { content: "\f72f"; }
+.bi-clock::before { content: "\f293"; }
+.bi-clock-history::before { content: "\f292"; }
+.bi-credit-card::before { content: "\f2dc"; }
+.bi-currency-rupee::before { content: "\f7ec"; }
+.bi-diagram-3::before { content: "\f2ee"; }
+.bi-door-closed::before { content: "\f306"; }
+.bi-door-open::before { content: "\f308"; }
+.bi-droplet::before { content: "\f30d"; }
+.bi-droplet-fill::before { content: "\f30b"; }
+.bi-droplet-half::before { content: "\f30c"; }
+.bi-emoji-smile::before { content: "\f327"; }
+.bi-envelope::before { content: "\f32f"; }
+.bi-envelope-fill::before { content: "\f32c"; }
+.bi-exclamation-triangle::before { content: "\f33b"; }
+.bi-file-earmark-arrow-down::before { content: "\f356"; }
+.bi-file-earmark-check::before { content: "\f360"; }
+.bi-file-earmark-pdf::before { content: "\f63e"; }
+.bi-file-medical::before { content: "\f3a1"; }
+.bi-gender-female::before { content: "\f642"; }
+.bi-gender-male::before { content: "\f643"; }
+.bi-geo-alt::before { content: "\f3e8"; }
+.bi-geo-alt-fill::before { content: "\f3e7"; }
+.bi-globe2::before { content: "\f3ef"; }
+.bi-google::before { content: "\f3f0"; }
+.bi-graph-up-arrow::before { content: "\f673"; }
+.bi-headset::before { content: "\f414"; }
+.bi-heart-pulse::before { content: "\f76f"; }
+.bi-heart-pulse-fill::before { content: "\f76e"; }
+.bi-hospital::before { content: "\f774"; }
+.bi-house::before { content: "\f425"; }
+.bi-house-door::before { content: "\f423"; }
+.bi-house-heart::before { content: "\f776"; }
+.bi-house-heart-fill::before { content: "\f775"; }
+.bi-lightning-charge-fill::before { content: "\f46c"; }
+.bi-link-45deg::before { content: "\f470"; }
+.bi-list::before { content: "\f479"; }
+.bi-map::before { content: "\f47f"; }
+.bi-moisture::before { content: "\f493"; }
+.bi-moon::before { content: "\f497"; }
+.bi-moon-stars::before { content: "\f496"; }
+.bi-moon-stars-fill::before { content: "\f495"; }
+.bi-patch-check-fill::before { content: "\f4b5"; }
+.bi-patch-question::before { content: "\f4be"; }
+.bi-pause-fill::before { content: "\f4c3"; }
+.bi-people::before { content: "\f4d0"; }
+.bi-person-badge::before { content: "\f4d3"; }
+.bi-person-check::before { content: "\f4d6"; }
+.bi-person-circle::before { content: "\f4d7"; }
+.bi-person-heart::before { content: "\f77a"; }
+.bi-person-hearts::before { content: "\f77b"; }
+.bi-person-vcard::before { content: "\f8c9"; }
+.bi-person-vcard-fill::before { content: "\f8c8"; }
+.bi-person-walking::before { content: "\f8fa"; }
+.bi-play-fill::before { content: "\f4f4"; }
+.bi-search::before { content: "\f52a"; }
+.bi-send::before { content: "\f6c0"; }
+.bi-share-fill::before { content: "\f52d"; }
+.bi-shield-check::before { content: "\f52f"; }
+.bi-shield-fill-check::before { content: "\f531"; }
+.bi-shield-plus::before { content: "\f53a"; }
+.bi-sign-turn-right-fill::before { content: "\f831"; }
+.bi-star-fill::before { content: "\f586"; }
+.bi-stopwatch::before { content: "\f597"; }
+.bi-stopwatch-fill::before { content: "\f596"; }
+.bi-telephone::before { content: "\f5c1"; }
+.bi-telephone-fill::before { content: "\f5b4"; }
+.bi-thermometer-half::before { content: "\f5cd"; }
+.bi-tools::before { content: "\f5db"; }
+.bi-train-front::before { content: "\f81d"; }
+.bi-universal-access::before { content: "\f826"; }
+.bi-virus2::before { content: "\f828"; }
+.bi-whatsapp::before { content: "\f618"; }
+.bi-x-circle::before { content: "\f623"; }
+.bi-x-lg::before { content: "\f659"; }
+.bi-x-octagon::before { content: "\f627"; }

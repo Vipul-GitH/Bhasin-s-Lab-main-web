@@ -2565,3 +2565,9 @@ body.menu-open {
     order: 2;
   }
 }
+
+/* Speed (22 Oct 2026): the homepage "Why Dr Bhasin's Lab" panel shows its own
+   photo on top, so don't also download the background photo behind it. */
+.visual-panel.why-visual-panel {
+  background-image: none;
+}
