@@ -20,14 +20,24 @@
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://bhasinpathlabs.com/" />
     <link rel="icon" href="assets/img/dr-bhasins-lab-mark.webp" />
-    <link rel="preload" href="/assets/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/fonts/fonts.css?v=20261022">
+    <link rel="preload" href="/assets/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/source-serif-4-latin-500-opsz36.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/fonts/fonts.css?v=20261022">
     <link rel="stylesheet" href="/assets/css/icons.css?v=20261022">
     <link rel="preload" as="image" href="assets/img/banners/hero-banner-doctors-behind-every-result-1920x720.webp" imagesrcset="assets/img/banners/hero-banner-doctors-behind-every-result-1920x720.webp 1920w, assets/img/banners/hero-banner-doctors-behind-every-result-3840x1440.webp 3840w" imagesizes="(min-width: 1920px) 1920px, 100vw" media="(min-width: 1024px)" fetchpriority="high" />
     <link rel="preload" as="image" href="assets/img/banners/hero-banner-doctors-behind-every-result-1080x1350.webp" media="(max-width: 1023px)" fetchpriority="high" />
     <link href="assets/css/main.css?v=20261022b" rel="stylesheet" />
     <link href="assets/css/banner-carousel.css?v=20261022" rel="stylesheet" />
     <style>
-      /* Homepage heading under the banner. Insets match the banner headline. */
+      /* Homepage heading under the banner. The banner headline is painted in the
+         image (Source Serif 4, weight 500, optical size 36, colour #073f45). */
+      @font-face {
+        font-family: "Source Serif 4";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url("/assets/fonts/source-serif-4-latin-500-opsz36.woff2") format("woff2");
+      }
       .banner-hero .banner-controls {
         padding: 6px 16px 0;
       }
@@ -38,9 +48,12 @@
       }
       .home-hero-copy h1 {
         margin: 0 8.39% 8px;
-        color: var(--primary);
+        color: #073f45;
+        font-family: "Source Serif 4", serif;
         font-size: clamp(1.75rem, 2.6vw, 2.5rem);
         font-weight: 500;
+        font-synthesis: none;
+        letter-spacing: 0;
         line-height: 1.15;
         text-wrap: balance;
       }

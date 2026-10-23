@@ -63,5 +63,16 @@
 @media(min-width:1081px) and (max-width:1179px){.header .logo img{width:140px!important}.header .navmenu a{font-size:.78rem!important;padding:12px 4px!important}.header .header-actions{gap:6px}.header .header-actions .header-action-icon{width:36px!important;height:36px!important;flex:0 0 auto!important}}
 @media(max-width:700px){.header .logo img{width:180px!important}}
 .top-strip .topbar-report-link{font-weight:700!important}
+/* Phones: the download link is text plus its icon, matching the call link.
+   Desktop keeps the outlined pill above. */
+@media(max-width:700px){
+  .top-strip .container{min-height:44px}
+  .top-strip .group:last-child{display:flex;align-items:center;justify-content:space-between;width:100%;gap:12px;flex-wrap:nowrap}
+  .top-strip .group:last-child a{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 2px;border:0;border-radius:0;background:transparent;color:#fff;font-size:12.5px;font-weight:600;line-height:1;letter-spacing:0;white-space:nowrap;text-decoration:none}
+  .top-strip .topbar-report-link{border:0!important;border-radius:0!important;background:transparent!important;padding:0 2px!important;font-weight:600!important;font-size:12.5px!important;line-height:1!important;box-shadow:none!important}
+  .top-strip .topbar-report-link:hover,.top-strip .topbar-report-link:focus-visible{background:transparent!important;color:#fff!important}
+  .top-strip .group:last-child a:hover,.top-strip .group:last-child a:focus-visible{text-decoration:underline;text-underline-offset:3px}
+  .top-strip .group:last-child .bi{font-size:14px;line-height:1;opacity:.88}
+}
 .header .header-actions .header-action-icon:first-child{border:1px solid #9bcdb9!important;background:#f5fbf8!important;color:#168457!important}
 .header .header-actions .header-action-icon:last-child{border:1px solid #073f45!important;background:#073f45!important;color:#fff!important}
