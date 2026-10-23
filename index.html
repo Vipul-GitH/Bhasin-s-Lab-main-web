@@ -3,18 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>
-      24x7 Pathology Lab in South Delhi | Home Collection | Dr Bhasin's Lab
-    </title>
+    <title>Pathology Lab in South Delhi, Open 24x7 | Dr Bhasin's Lab</title>
     <meta
       name="description"
-      content="Dr Bhasin's Lab is a 24x7x365 walk-in pathology lab in Greater Kailash-I, South Delhi, with home sample collection across Delhi NCR."
+      content="Doctor-led pathology lab in South Delhi at S-35, Greater Kailash-I. Open 24x7 for walk-in tests. Home sample collection 6 AM to midnight, Delhi NCR."
     />
     <meta name="theme-color" content="#054E5D" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Dr Bhasin's Lab" />
     <meta property="og:title" content="24x7 Pathology Lab in South Delhi | Dr Bhasin's Lab" />
-    <meta property="og:description" content="Walk in 24x7x365 at Greater Kailash-I, South Delhi, or book home sample collection across Delhi NCR." />
+    <meta property="og:description" content="Doctor-led pathology lab in South Delhi at S-35, Greater Kailash-I. Open 24x7 for walk-in tests. Home sample collection 6 AM to midnight, Delhi NCR." />
     <meta property="og:url" content="https://bhasinpathlabs.com/" />
     <meta property="og:image" content="https://bhasinpathlabs.com/assets/img/hero-gk1-reception-welcome-cropped-v3.webp" />
     <meta property="og:image:alt" content="Patients being welcomed at Dr Bhasin's Lab reception" />
@@ -28,6 +26,55 @@
     <link rel="preload" as="image" href="assets/img/banners/hero-banner-doctors-behind-every-result-1080x1350.webp" media="(max-width: 1023px)" fetchpriority="high" />
     <link href="assets/css/main.css?v=20261022b" rel="stylesheet" />
     <link href="assets/css/banner-carousel.css?v=20261022" rel="stylesheet" />
+    <style>
+      /* Visible homepage heading, directly under the banner carousel. */
+      .home-hero-copy {
+        width: min(760px, calc(100% - 38px));
+        margin: 0 auto;
+        padding: 4px 0 40px;
+      }
+      .home-hero-kicker {
+        margin: 0 0 6px;
+        color: var(--primary);
+        font-size: 0.84rem;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        line-height: 1.4;
+      }
+      .home-hero-copy h1 {
+        margin: 0 0 14px;
+        color: var(--primary);
+        font-family: Montserrat, Poppins, sans-serif;
+        font-size: clamp(1.7rem, 3vw, 2.35rem);
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1.18;
+        text-wrap: balance;
+      }
+      .home-hero-lead {
+        margin: 0;
+        color: var(--ink);
+        font-size: 1.02rem;
+        line-height: 1.7;
+      }
+      .home-hero-lead a {
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+      @media (max-width: 700px) {
+        .home-hero-copy {
+          padding: 2px 0 28px;
+        }
+        .home-hero-copy h1 {
+          font-size: 1.55rem;
+          line-height: 1.22;
+        }
+        .home-hero-lead {
+          font-size: 0.98rem;
+        }
+      }
+    </style>
     <script src="assets/js/banner-carousel.js?v=20261022b" defer></script>
     <script type="application/ld+json">
 {
@@ -67,7 +114,8 @@
       "closes": "23:59"
     }
   ],
-  "description": "Dr Bhasin's Lab is a pathology laboratory in Greater Kailash-I, South Delhi, open 24x7x365 for walk-in patients, with home sample collection across Delhi NCR.",
+  "description": "Dr Bhasin's Lab is a doctor-led pathology lab in South Delhi, at S-35, Greater Kailash-I, New Delhi 110048. The laboratory is open 24x7x365 for walk-in testing, and every reported result is reviewed by a qualified pathologist. We collect samples at home from 6 AM to midnight across Delhi and NCR, free for bills above a nominal amount. We have been CGHS empanelled since 2001.",
+  "medicalSpecialty": "Pathology",
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": 28.5488675,
@@ -113,7 +161,6 @@
     </header>
     <main id="main">
       <section class="banner-hero" aria-labelledby="home-hero-title">
-        <h1 id="home-hero-title" class="sr-only">Doctors Behind Every Result. 24x7 pathology lab in Greater Kailash-I, South Delhi</h1>
         <div class="banner-carousel" role="region" aria-roledescription="carousel" aria-label="Dr Bhasin's Lab highlights">
           <div class="banner-track">
             <div class="banner-slide is-active" role="group" aria-roledescription="slide" aria-label="Doctors behind every result (1 of 3)">
@@ -151,6 +198,13 @@
             <button class="banner-next" type="button" aria-label="Next slide"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
           </div>
           <span class="banner-status" aria-live="polite" aria-atomic="true"></span>
+        </div>
+        <div class="home-hero-copy">
+          <p class="home-hero-kicker">Doctors Behind Every Result.</p>
+          <h1 id="home-hero-title">Pathology Lab in South Delhi, Open 24x7 in Greater Kailash-I</h1>
+          <p class="home-hero-lead">
+            Dr Bhasin's Lab is a doctor-led pathology lab in South Delhi, at S-35, Greater Kailash-I, New Delhi 110048. The laboratory is open 24x7x365 for walk-in testing, and every reported result is reviewed by a qualified pathologist. We collect samples at home from 6 AM to midnight across Delhi and NCR, free for bills above a nominal amount. We have been <a href="/cghs-empanelled/">CGHS empanelled since 2001</a>.
+          </p>
         </div>
       </section>
       <section class="section patient-service-section">
